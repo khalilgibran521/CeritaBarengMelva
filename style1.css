@@ -1,0 +1,249 @@
+/* Mengatur seluruh halaman */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    color: #ff6f91;
+    margin-bottom: 20px;
+}
+
+/* Parallax Effect */
+.parallax {
+    background-image: url('background.jpg');
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-header {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.main-header h1 {
+    font-size: 3rem;
+}
+
+.main-header p {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* Section Cerita */
+.story-section {
+    margin: 50px 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.story-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.story-content.reverse {
+    flex-direction: row-reverse;
+}
+
+.story-image {
+    width: 50%;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.story-content p {
+    width: 45%;
+    font-size: 1.2rem;
+    color: #444;
+}
+
+.story-image:hover {
+    transform: scale(1.05);
+}
+
+/* Quotes Section */
+.quotes-section {
+    margin: 50px 20px;
+    padding: 40px;
+    background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.quote-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #333;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    background: #333;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .story-content {
+        flex-direction: column;
+    }
+
+    .story-content.reverse {
+        flex-direction: column;
+    }
+
+    .story-image, .story-content p {
+        width: 100%;
+    }
+}
+
+/* Pengaturan untuk layar lebih kecil dari 480px */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .main-header h1 {
+        font-size: 2rem; /* Kurangi ukuran header pada layar kecil */
+    }
+
+    .main-header p {
+        font-size: 1rem;
+    }
+
+    .story-section {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    .story-image, .story-content p {
+        width: 100%;
+        margin: 0;
+    }
+
+    .quotes-section {
+        padding: 20px;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Styling untuk halaman login */
+.login-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    margin: auto;
+}
+
+.login-container h1 {
+    font-family: 'Playfair Display', serif;
+    color: #ff6f91;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+    border-color: #ff6f91;
+    outline: none;
+}
+
+.login-container button {
+    padding: 15px;
+    background: linear-gradient(135deg, #ff6f91, #ff467e);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+    background: linear-gradient(135deg, #ff467e, #ff6f91);
+}
+
+#error-msg {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px; /* Mengurangi padding agar lebih hemat ruang */
+    }
+
+    .login-container h1 {
+        font-size: 2rem; /* Ukuran lebih kecil untuk layar kecil */
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"],
+    .login-container button {
+        font-size: 0.9rem; /* Ukuran font lebih kecil */
+        padding: 12px; /* Padding lebih kecil */
+    }
+}
